@@ -4,6 +4,19 @@ Color adjustment design layer plugin for [genart.dev](https://genart.dev) — no
 
 Part of [genart.dev](https://genart.dev) — a generative art platform with an MCP server, desktop app, and IDE extensions.
 
+## Examples
+
+![HSL adjustments](images/hsl-adjustments.png)
+
+Hue shifting, desaturation, lightness, and hue-targeted adjustments applied to a rainbow gradient.
+
+<table>
+<tr>
+<td><img src="images/levels-adjustments.png" width="400" /><br><em>Levels: shadow/highlight crush, gamma</em></td>
+<td><img src="images/curves-adjustments.png" width="400" /><br><em>Curves: S-curve, invert, posterize, per-channel</em></td>
+</tr>
+</table>
+
 ## Install
 
 ```bash
