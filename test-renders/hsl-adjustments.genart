@@ -1,0 +1,252 @@
+{
+  "genart": "1.2",
+  "id": "hsl-adjustments",
+  "title": "HSL Adjustments",
+  "created": "2026-03-06T00:00:00Z",
+  "modified": "2026-03-06T00:00:00Z",
+  "renderer": { "type": "canvas2d" },
+  "canvas": { "width": 388, "height": 418 },
+  "parameters": [],
+  "colors": [],
+  "state": { "seed": 1, "params": {}, "colorPalette": [] },
+  "algorithm": "function sketch(ctx, state) {\n  var CW = 260, CH = 60, PAD = 4, LABEL_W = 120, ROWS = 6;\n  ctx.fillStyle = '#1a1a2e';\n  ctx.fillRect(0, 0, 388, 418);\n  for (var row = 0; row < ROWS; row++) {\n    var x = LABEL_W + PAD;\n    var y = 30 + row * (CH + PAD);\n    var grad = ctx.createLinearGradient(x, y, x + CW, y);\n    grad.addColorStop(0, '#ff0000');\n    grad.addColorStop(0.17, '#ffff00');\n    grad.addColorStop(0.33, '#00ff00');\n    grad.addColorStop(0.5, '#00ffff');\n    grad.addColorStop(0.67, '#0000ff');\n    grad.addColorStop(0.83, '#ff00ff');\n    grad.addColorStop(1, '#ff0000');\n    ctx.fillStyle = grad;\n    ctx.fillRect(x, y, CW, CH);\n  }\n  return {};\n}",
+  "layers": [
+    {
+      "id": "title",
+      "type": "typography:text",
+      "name": "Title",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 7, "width": 300, "height": 20, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "HSL Adjustments",
+        "fontFamily": "Inter",
+        "fontSize": 13,
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "#e0e0e0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-0",
+      "type": "typography:text",
+      "name": "Label: Original",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 56, "width": 116, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Original",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-1",
+      "type": "typography:text",
+      "name": "Label: Hue +90",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 120, "width": 116, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Hue +90\u00b0",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-2",
+      "type": "typography:text",
+      "name": "Label: Hue +180",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 184, "width": 116, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Hue +180\u00b0",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-3",
+      "type": "typography:text",
+      "name": "Label: Saturation -60",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 248, "width": 116, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Saturation \u221260",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-4",
+      "type": "typography:text",
+      "name": "Label: Lightness +30",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 312, "width": 116, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Lightness +30",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-5",
+      "type": "typography:text",
+      "name": "Label: Target Red +120",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 376, "width": 116, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Target Red +120\u00b0",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "hsl-hue90",
+      "type": "adjust:hsl",
+      "name": "Hue +90",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 124, "y": 94, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "hue": 90,
+        "saturation": 0,
+        "lightness": 0,
+        "targetHue": -1,
+        "targetRange": 30,
+        "targetFalloff": 15
+      }
+    },
+    {
+      "id": "hsl-hue180",
+      "type": "adjust:hsl",
+      "name": "Hue +180",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 124, "y": 158, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "hue": 180,
+        "saturation": 0,
+        "lightness": 0,
+        "targetHue": -1,
+        "targetRange": 30,
+        "targetFalloff": 15
+      }
+    },
+    {
+      "id": "hsl-sat-60",
+      "type": "adjust:hsl",
+      "name": "Saturation -60",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 124, "y": 222, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "hue": 0,
+        "saturation": -60,
+        "lightness": 0,
+        "targetHue": -1,
+        "targetRange": 30,
+        "targetFalloff": 15
+      }
+    },
+    {
+      "id": "hsl-light30",
+      "type": "adjust:hsl",
+      "name": "Lightness +30",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 124, "y": 286, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "hue": 0,
+        "saturation": 0,
+        "lightness": 30,
+        "targetHue": -1,
+        "targetRange": 30,
+        "targetFalloff": 15
+      }
+    },
+    {
+      "id": "hsl-target-red",
+      "type": "adjust:hsl",
+      "name": "Target Red +120",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 124, "y": 350, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "hue": 120,
+        "saturation": 0,
+        "lightness": 0,
+        "targetHue": 0,
+        "targetRange": 30,
+        "targetFalloff": 15
+      }
+    }
+  ]
+}

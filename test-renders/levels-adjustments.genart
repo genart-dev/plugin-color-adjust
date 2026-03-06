@@ -1,0 +1,213 @@
+{
+  "genart": "1.2",
+  "id": "levels-adjustments",
+  "title": "Levels Adjustments",
+  "created": "2026-03-06T00:00:00Z",
+  "modified": "2026-03-06T00:00:00Z",
+  "renderer": { "type": "canvas2d" },
+  "canvas": { "width": 408, "height": 354 },
+  "parameters": [],
+  "colors": [],
+  "state": { "seed": 1, "params": {}, "colorPalette": [] },
+  "algorithm": "function sketch(ctx, state) {\n  var CW = 260, CH = 60, PAD = 4, LABEL_W = 140, ROWS = 5;\n  ctx.fillStyle = '#1a1a2e';\n  ctx.fillRect(0, 0, 408, 354);\n  for (var row = 0; row < ROWS; row++) {\n    var x = LABEL_W + PAD;\n    var y = 30 + row * (CH + PAD);\n    var grad = ctx.createLinearGradient(x, y, x + CW, y);\n    grad.addColorStop(0, '#000000');\n    grad.addColorStop(1, '#ffffff');\n    ctx.fillStyle = grad;\n    ctx.fillRect(x, y, CW, CH);\n  }\n  return {};\n}",
+  "layers": [
+    {
+      "id": "title",
+      "type": "typography:text",
+      "name": "Title",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 7, "width": 300, "height": 20, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Levels Adjustments",
+        "fontFamily": "Inter",
+        "fontSize": 13,
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "#e0e0e0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-0",
+      "type": "typography:text",
+      "name": "Label: Original",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 56, "width": 136, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Original",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-1",
+      "type": "typography:text",
+      "name": "Label: Crush Shadows",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 120, "width": 136, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Crush Shadows (64\u2013255)",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-2",
+      "type": "typography:text",
+      "name": "Label: Crush Highlights",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 184, "width": 136, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Crush Highlights (0\u2013192)",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-3",
+      "type": "typography:text",
+      "name": "Label: Gamma 0.4",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 248, "width": 136, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Gamma 0.4 (darken)",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "label-4",
+      "type": "typography:text",
+      "name": "Label: Gamma 2.5",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 8, "y": 312, "width": 136, "height": 16, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "text": "Gamma 2.5 (brighten)",
+        "fontFamily": "Inter",
+        "fontSize": 11,
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "#b0b0b0",
+        "align": "left",
+        "baseline": "top",
+        "lineHeight": 1.2
+      }
+    },
+    {
+      "id": "levels-crush-shadows",
+      "type": "adjust:levels",
+      "name": "Crush Shadows",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 144, "y": 94, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "inputBlack": 64,
+        "inputWhite": 255,
+        "gamma": 1.0,
+        "outputBlack": 0,
+        "outputWhite": 255,
+        "channel": "rgb"
+      }
+    },
+    {
+      "id": "levels-crush-highlights",
+      "type": "adjust:levels",
+      "name": "Crush Highlights",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 144, "y": 158, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "inputBlack": 0,
+        "inputWhite": 192,
+        "gamma": 1.0,
+        "outputBlack": 0,
+        "outputWhite": 255,
+        "channel": "rgb"
+      }
+    },
+    {
+      "id": "levels-gamma-dark",
+      "type": "adjust:levels",
+      "name": "Gamma 0.4",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 144, "y": 222, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "inputBlack": 0,
+        "inputWhite": 255,
+        "gamma": 0.4,
+        "outputBlack": 0,
+        "outputWhite": 255,
+        "channel": "rgb"
+      }
+    },
+    {
+      "id": "levels-gamma-bright",
+      "type": "adjust:levels",
+      "name": "Gamma 2.5",
+      "visible": true,
+      "locked": false,
+      "opacity": 1,
+      "blendMode": "normal",
+      "transform": { "x": 144, "y": 286, "width": 260, "height": 60, "rotation": 0, "scaleX": 1, "scaleY": 1, "anchorX": 0, "anchorY": 0 },
+      "properties": {
+        "inputBlack": 0,
+        "inputWhite": 255,
+        "gamma": 2.5,
+        "outputBlack": 0,
+        "outputWhite": 255,
+        "channel": "rgb"
+      }
+    }
+  ]
+}

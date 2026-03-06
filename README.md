@@ -6,16 +6,16 @@ Part of [genart.dev](https://genart.dev) — a generative art platform with an M
 
 ## Examples
 
-![HSL adjustments](images/hsl-adjustments.png)
-
-Hue shifting, desaturation, lightness, and hue-targeted adjustments applied to a rainbow gradient.
+![HSL adjustments](test-renders/hsl-adjustments.png)
 
 <table>
 <tr>
-<td><img src="images/levels-adjustments.png" width="400" /><br><em>Levels: shadow/highlight crush, gamma</em></td>
-<td><img src="images/curves-adjustments.png" width="400" /><br><em>Curves: S-curve, invert, posterize, per-channel</em></td>
+<td><img src="test-renders/levels-adjustments.png" width="400" /><br><em>Levels: shadow/highlight crush, gamma</em></td>
+<td><img src="test-renders/curves-adjustments.png" width="400" /><br><em>Curves: S-curve, invert, posterize, per-channel</em></td>
 </tr>
 </table>
+
+Source files: [hsl-adjustments.genart](test-renders/hsl-adjustments.genart) · [levels-adjustments.genart](test-renders/levels-adjustments.genart) · [curves-adjustments.genart](test-renders/curves-adjustments.genart)
 
 ## Install
 
