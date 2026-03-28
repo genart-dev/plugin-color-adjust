@@ -39,8 +39,8 @@ describe("colorAdjustPlugin", () => {
   it("exports a valid DesignPlugin", () => {
     expect(colorAdjustPlugin.id).toBe("color-adjust");
     expect(colorAdjustPlugin.tier).toBe("free");
-    expect(colorAdjustPlugin.layerTypes).toHaveLength(3);
-    expect(colorAdjustPlugin.mcpTools).toHaveLength(4);
+    expect(colorAdjustPlugin.layerTypes).toHaveLength(5);
+    expect(colorAdjustPlugin.mcpTools).toHaveLength(6);
   });
 });
 

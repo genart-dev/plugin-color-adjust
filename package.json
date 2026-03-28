@@ -1,6 +1,6 @@
 {
   "name": "@genart-dev/plugin-color-adjust",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Color adjustment design layer plugin for genart.dev",
   "type": "module",
   "main": "./dist/index.cjs",

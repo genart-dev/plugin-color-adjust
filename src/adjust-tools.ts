@@ -212,9 +212,92 @@ export const autoLevelsTool: McpToolDefinition = {
   },
 };
 
+export const adjustColorBalanceTool: McpToolDefinition = {
+  name: "adjust_color_balance",
+  description: "Create a color balance adjustment layer with shadow/midtone/highlight tinting.",
+  inputSchema: {
+    type: "object",
+    properties: {
+      layerName: { type: "string" },
+      shadowR: { type: "number", description: "Shadow red tint −100–100. Default 0." },
+      shadowG: { type: "number", description: "Shadow green tint −100–100. Default 0." },
+      shadowB: { type: "number", description: "Shadow blue tint −100–100. Default 0." },
+      midR: { type: "number", description: "Midtone red tint −100–100. Default 0." },
+      midG: { type: "number", description: "Midtone green tint −100–100. Default 0." },
+      midB: { type: "number", description: "Midtone blue tint −100–100. Default 0." },
+      highR: { type: "number", description: "Highlight red tint −100–100. Default 0." },
+      highG: { type: "number", description: "Highlight green tint −100–100. Default 0." },
+      highB: { type: "number", description: "Highlight blue tint −100–100. Default 0." },
+      preserveLuminosity: { type: "boolean", description: "Preserve luminosity. Default true." },
+      opacity: { type: "number" },
+    },
+  } satisfies JsonSchema,
+
+  async handler(input: Record<string, unknown>, context: McpToolContext): Promise<McpToolResult> {
+    const properties: LayerProperties = {
+      shadowR: (input.shadowR as number) ?? 0,
+      shadowG: (input.shadowG as number) ?? 0,
+      shadowB: (input.shadowB as number) ?? 0,
+      midR: (input.midR as number) ?? 0,
+      midG: (input.midG as number) ?? 0,
+      midB: (input.midB as number) ?? 0,
+      highR: (input.highR as number) ?? 0,
+      highG: (input.highG as number) ?? 0,
+      highB: (input.highB as number) ?? 0,
+      preserveLuminosity: (input.preserveLuminosity as boolean) ?? true,
+    };
+    const layer = makeAdjustLayer("adjust:color-balance", "Color Balance", properties, input);
+    context.layers.add(layer);
+    context.emitChange("layer-added");
+    return textResult(`Added color balance layer '${layer.id}'.`);
+  },
+};
+
+export const applyGradientMapTool: McpToolDefinition = {
+  name: "apply_gradient_map",
+  description: "Create a gradient map layer that remaps luminance to a color gradient.",
+  inputSchema: {
+    type: "object",
+    properties: {
+      layerName: { type: "string" },
+      stops: {
+        type: "array",
+        description: 'Color stops: [{pos: 0–1, color: "#hex"}]. Min 2 stops.',
+        items: {
+          type: "object",
+          properties: {
+            pos: { type: "number", description: "Position 0–1." },
+            color: { type: "string", description: "Hex color." },
+          },
+          required: ["pos", "color"],
+        },
+      },
+      intensity: { type: "number", description: "Effect intensity 0–1. Default 1.0." },
+      opacity: { type: "number" },
+    },
+    required: ["stops"],
+  } satisfies JsonSchema,
+
+  async handler(input: Record<string, unknown>, context: McpToolContext): Promise<McpToolResult> {
+    const stops = input.stops as Array<{ pos: number; color: string }>;
+    if (!stops || stops.length < 2) return errorResult("At least 2 gradient stops required.");
+
+    const properties: LayerProperties = {
+      stops: JSON.stringify(stops),
+      intensity: (input.intensity as number) ?? 1.0,
+    };
+    const layer = makeAdjustLayer("adjust:gradient-map", "Gradient Map", properties, input);
+    context.layers.add(layer);
+    context.emitChange("layer-added");
+    return textResult(`Added gradient map layer '${layer.id}' with ${stops.length} stops.`);
+  },
+};
+
 export const colorAdjustMcpTools: McpToolDefinition[] = [
   adjustHslTool,
   adjustLevelsTool,
   adjustCurvesTool,
   autoLevelsTool,
+  adjustColorBalanceTool,
+  applyGradientMapTool,
 ];
