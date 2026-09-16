@@ -44,6 +44,9 @@ const CURVES_PROPERTIES: LayerPropertySchema[] = [
 
 export const curvesLayerType: LayerTypeDefinition = {
   typeId: "adjust:curves",
+  // A per-pixel colour map with no length in it, so it is the same at any
+  // resolution (ADR 111).
+  resolution: "device",
   // Reads the pixels earlier layers drew (ADR 111).
   reads: "composite",
   displayName: "Curves",

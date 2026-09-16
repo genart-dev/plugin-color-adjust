@@ -67,6 +67,9 @@ function sampleGradient(stops: GradientStop[], t: number): [number, number, numb
 
 export const gradientMapLayerType: LayerTypeDefinition = {
   typeId: "adjust:gradient-map",
+  // A per-pixel colour map with no length in it, so it is the same at any
+  // resolution (ADR 111).
+  resolution: "device",
   // Reads the pixels earlier layers drew (ADR 111).
   reads: "composite",
   displayName: "Gradient Map",
