@@ -22,6 +22,8 @@ const COLOR_BALANCE_PROPERTIES: LayerPropertySchema[] = [
 
 export const colorBalanceLayerType: LayerTypeDefinition = {
   typeId: "adjust:color-balance",
+  // Reads the pixels earlier layers drew (ADR 111).
+  reads: "composite",
   displayName: "Color Balance",
   icon: "color-balance",
   category: "filter",

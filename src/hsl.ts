@@ -50,6 +50,8 @@ function angleDist(a: number, b: number): number {
 
 export const hslLayerType: LayerTypeDefinition = {
   typeId: "adjust:hsl",
+  // Reads the pixels earlier layers drew (ADR 111).
+  reads: "composite",
   displayName: "HSL Adjustment",
   icon: "color_lens",
   category: "adjustment",

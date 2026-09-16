@@ -44,6 +44,8 @@ const CURVES_PROPERTIES: LayerPropertySchema[] = [
 
 export const curvesLayerType: LayerTypeDefinition = {
   typeId: "adjust:curves",
+  // Reads the pixels earlier layers drew (ADR 111).
+  reads: "composite",
   displayName: "Curves",
   icon: "show_chart",
   category: "adjustment",

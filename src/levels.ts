@@ -30,6 +30,8 @@ const LEVELS_PROPERTIES: LayerPropertySchema[] = [
 
 export const levelsLayerType: LayerTypeDefinition = {
   typeId: "adjust:levels",
+  // Reads the pixels earlier layers drew (ADR 111).
+  reads: "composite",
   displayName: "Levels",
   icon: "exposure",
   category: "adjustment",
