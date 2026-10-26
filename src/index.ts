@@ -9,7 +9,7 @@ import { colorAdjustMcpTools } from "./adjust-tools.js";
 const colorAdjustPlugin: DesignPlugin = {
   id: "color-adjust",
   name: "Color Adjustment",
-  version: "0.2.0",
+  version: "0.3.0",
   tier: "free",
   description: "Non-destructive color adjustment layers: HSL, Levels, Curves, Color Balance, Gradient Map.",
 
